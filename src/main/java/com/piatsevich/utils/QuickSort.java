@@ -7,20 +7,22 @@ import java.util.List;
 public class QuickSort implements Sort {
 
     @Override
-    public <T> void sort(List<T> ballList, GeneralComparator<T> comparator) {
-        quicksortList(ballList, 0, ballList.size() - 1, comparator);
+    public <T> List<T> sort(List<T> ballList, GeneralComparator<T> comparator) {
+        return quicksortList(ballList, 0, ballList.size() - 1, comparator);
     }
 
-    private <T> void quicksortList(List<T> listOfBalls, int lowIndex,
+    private <T> List<T> quicksortList(List<T> listOfBalls, int lowIndex,
                                    int highIndex, GeneralComparator<T> comparator) {
         if (lowIndex >= highIndex) {
-            return;
+            return listOfBalls;
         }
 
         int leftPointer = partition(listOfBalls, lowIndex, highIndex, comparator);
 
         quicksortList(listOfBalls, lowIndex, leftPointer - 1, comparator);
         quicksortList(listOfBalls, leftPointer + 1, highIndex, comparator);
+
+        return listOfBalls;
     }
 
     private static <T> int partition(List<T> listOfBalls, int lowIndex,

@@ -11,11 +11,12 @@ public class Sorter implements Sortable {
 
     private Sort sortType;
     private List<BasketBall> ballList;
+    private List<BasketBall> sortedList;
     private Comparator<BasketBall> comparator;
 
     @Override
-    public <T> void sort(List<T> list, GeneralComparator<T> comparator, Sort sortType) {
-        sortType.sort(list, comparator);
+    public <T> List<T> sort(List<T> list, GeneralComparator<T> comparator, Sort sortType) {
+        return sortType.sort(list, comparator);
     }
 
     public Sort getSortType() {

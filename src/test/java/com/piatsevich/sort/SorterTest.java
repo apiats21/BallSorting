@@ -1,6 +1,7 @@
 package com.piatsevich.sort;
 
 import com.piatsevich.comparator.GeneralComparator;
+import com.piatsevich.comparator.impl.ColorComparator;
 import com.piatsevich.comparator.impl.SizeComparator;
 import com.piatsevich.model.BasketBall;
 import com.piatsevich.model.Color;
@@ -23,6 +24,7 @@ class SorterTest {
     private List<BasketBall> ballList;
     private List<BasketBall> emptyBallList;
     private GeneralComparator<BasketBall> cmpBySize;
+    private GeneralComparator<BasketBall> cmpByColor;
 
     @BeforeEach
     void init() {
@@ -30,6 +32,7 @@ class SorterTest {
         quickSort = new QuickSort();
         quickSortDec = new QuickSortDec();
         cmpBySize = new SizeComparator();
+        cmpByColor = new ColorComparator();
         sorter = new Sorter();
 
         BasketBall ball1 = BasketBall.builder().size(11).color(Color.YELLOW).build();
@@ -62,9 +65,19 @@ class SorterTest {
     }
 
     @Test
-    void sortingList() {
+    void sortingListBySize() {
         sorter.sort(ballList, cmpBySize, quickSort);
-        assertEquals((BasketBall.builder().size(7).color(Color.YELLOW).build()), ballList.get(0));
-        assertEquals((BasketBall.builder().size(42).color(Color.GREEN).build()), ballList.get(4));
+        for (int i = 0; i <ballList.size()-1; i++) {
+            assertTrue((ballList.get(i).getSize() - ballList.get(i+1).getSize()) <= 0 );
+        }
+    }
+
+    @Test
+    void sortingListByColor() {
+        List<BasketBall> list =  sorter.sort(ballList, cmpByColor, quickSort);
+        for (int i = 0; i <ballList.size()-2; i++) {
+
+            assertTrue((ballList.get(i).getColor().compareTo(ballList.get(i+1).getColor())) <= 0 );
+        }
     }
 }

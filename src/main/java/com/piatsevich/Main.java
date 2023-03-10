@@ -21,24 +21,24 @@ public class Main {
         GeneralComparator<BasketBall> comparator = new SizeComparator();
         GeneralComparator<BasketBall> cmp = new ColorComparator();
 
-//        BasketBall ball1 = new BasketBall(10, Color.BLUE);
-//        BasketBall ball2 = new BasketBall(15, Color.GREEN);
-//        BasketBall ball3 = new BasketBall(7, Color.BLUE);
-//        BasketBall ball4 = new BasketBall(42, Color.YELLOW);
-//        BasketBall ball5 = new BasketBall(23, Color.GREEN);
-//        list.add(ball1);
-//        list.add(ball2);
-//        list.add(ball3);
-//        list.add(ball4);
-//        list.add(ball5);
+        BasketBall ball1 = BasketBall.builder().size(11).color(Color.YELLOW).build();
+        BasketBall ball2 = BasketBall.builder().size(15).color(Color.BLUE).build();
+        BasketBall ball3 = BasketBall.builder().size(7).color(Color.YELLOW).build();
+        BasketBall ball4 = BasketBall.builder().size(42).color(Color.GREEN).build();
+        BasketBall ball5 = BasketBall.builder().size(23).color(Color.BLUE).build();
+        list.add(ball1);
+        list.add(ball2);
+        list.add(ball3);
+        list.add(ball4);
+        list.add(ball5);
 
         System.out.println(list);
         Sorter sorter = new Sorter();
 
 //        sorter.sort(list, comparator, qs);
-        sorter.sort(list, comparator, qs1);
+        List<BasketBall> list1 =  sorter.sort(list, comparator, qs1);
 
 //        qs.quicksortList(list, cmp);
-        System.out.println(list);
+        System.out.println(list1);
     }
 }
