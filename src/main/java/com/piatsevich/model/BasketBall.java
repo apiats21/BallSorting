@@ -1,9 +1,19 @@
 package com.piatsevich.model;
 
-public class BasketBall {
+public class BasketBall implements Comparable<BasketBall> {
 
     private int size;
     private Color color;
+
+    public BasketBall(int size, Color color) {
+        this.size = size;
+        this.color = color;
+    }
+
+    @Override
+    public int compareTo(BasketBall o) {
+        return 0;
+    }
 
     public int getSize() {
         return size;

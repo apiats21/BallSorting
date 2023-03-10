@@ -1,6 +1,6 @@
 package com.piatsevich.sorting;
 
-import com.piatsevich.comparator.SizeComparator;
+import com.piatsevich.comparator.impl.SizeComparator;
 import com.piatsevich.model.BasketBall;
 import com.piatsevich.model.Color;
 import org.junit.jupiter.api.Test;
