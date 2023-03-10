@@ -21,16 +21,16 @@ public class Main {
         GeneralComparator<BasketBall> comparator = new SizeComparator();
         GeneralComparator<BasketBall> cmp = new ColorComparator();
 
-        BasketBall ball1 = new BasketBall(10, Color.BLUE);
-        BasketBall ball2 = new BasketBall(15, Color.GREEN);
-        BasketBall ball3 = new BasketBall(7, Color.BLUE);
-        BasketBall ball4 = new BasketBall(42, Color.YELLOW);
-        BasketBall ball5 = new BasketBall(23, Color.GREEN);
-        list.add(ball1);
-        list.add(ball2);
-        list.add(ball3);
-        list.add(ball4);
-        list.add(ball5);
+//        BasketBall ball1 = new BasketBall(10, Color.BLUE);
+//        BasketBall ball2 = new BasketBall(15, Color.GREEN);
+//        BasketBall ball3 = new BasketBall(7, Color.BLUE);
+//        BasketBall ball4 = new BasketBall(42, Color.YELLOW);
+//        BasketBall ball5 = new BasketBall(23, Color.GREEN);
+//        list.add(ball1);
+//        list.add(ball2);
+//        list.add(ball3);
+//        list.add(ball4);
+//        list.add(ball5);
 
         System.out.println(list);
         Sorter sorter = new Sorter();

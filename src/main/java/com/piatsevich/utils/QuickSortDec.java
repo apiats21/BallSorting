@@ -24,7 +24,7 @@ public class QuickSortDec implements Sort {
     }
 
     private static <T> int partition(List<T> listOfBalls, int lowIndex,
-                                     int highIndex, GeneralComparator <T> comparator) {
+                                     int highIndex, GeneralComparator<T> comparator) {
 
         T pivot = listOfBalls.get(highIndex);
         int leftPointer = lowIndex;

@@ -9,23 +9,14 @@ import java.util.List;
 
 public class Sorter implements Sortable {
 
-    Sort sortType;
-    List<BasketBall> ballList;
-    Comparator<BasketBall> comparator;
+    private Sort sortType;
+    private List<BasketBall> ballList;
+    private Comparator<BasketBall> comparator;
 
     @Override
     public <T> void sort(List<T> list, GeneralComparator<T> comparator, Sort sortType) {
         sortType.sort(list, comparator);
     }
-
-
-    // это прокси
-    // 2-3 methods которые принимают sortType(вид сортировщика), лист и компаратор и попытаться сделать сортировку
-    // и обработать ошибку и возвратить отсортированную коллекцию, описать логи
-    //
-    // в тестах создаем список, quickSort, comparator и передаем сортировщику и проверяем что сортировщик отработал как надо
-    // задача: проверть что иеархия сортировщик, mergesort и компаратор работает
-
 
     public Sort getSortType() {
         return sortType;

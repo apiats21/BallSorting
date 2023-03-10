@@ -1,14 +1,12 @@
 package com.piatsevich.model;
 
+import lombok.Builder;
+
+@Builder
 public class BasketBall implements Comparable<BasketBall> {
 
     private int size;
     private Color color;
-
-    public BasketBall(int size, Color color) {
-        this.size = size;
-        this.color = color;
-    }
 
     @Override
     public int compareTo(BasketBall o) {
