@@ -35,16 +35,23 @@ class SorterTest {
         cmpByColor = new ColorComparator();
         sorter = new Sorter();
 
-        BasketBall ball1 = BasketBall.builder().size(11).color(Color.YELLOW).build();
-        BasketBall ball2 = BasketBall.builder().size(15).color(Color.BLUE).build();
-        BasketBall ball3 = BasketBall.builder().size(7).color(Color.YELLOW).build();
-        BasketBall ball4 = BasketBall.builder().size(42).color(Color.GREEN).build();
-        BasketBall ball5 = BasketBall.builder().size(23).color(Color.BLUE).build();
+        var ball1 = BasketBall.builder().size(11).color(Color.YELLOW).build();
+        var ball2 = BasketBall.builder().size(15).color(Color.BLUE).build();
+        var ball3 = BasketBall.builder().size(7).color(Color.YELLOW).build();
+        var ball4 = BasketBall.builder().size(42).color(Color.GREEN).build();
+        var ball5 = BasketBall.builder().size(23).color(Color.BLUE).build();
         ballList.add(ball1);
         ballList.add(ball2);
         ballList.add(ball3);
         ballList.add(ball4);
         ballList.add(ball5);
+    }
+
+    @Test
+    void sorterReturnNotNull() {
+        emptyBallList = Collections.emptyList();
+        var list = sorter.sort(emptyBallList, cmpBySize, quickSortDec);
+        assertNotNull(list);
     }
 
     @Test
@@ -67,16 +74,15 @@ class SorterTest {
     @Test
     void sortingListBySize() {
         sorter.sort(ballList, cmpBySize, quickSort);
-        for (int i = 0; i <ballList.size()-1; i++) {
+        for (int i = 0; i <ballList.size()-2; i++) {
             assertTrue((ballList.get(i).getSize() - ballList.get(i+1).getSize()) <= 0 );
         }
     }
 
     @Test
     void sortingListByColor() {
-        List<BasketBall> list =  sorter.sort(ballList, cmpByColor, quickSort);
         for (int i = 0; i <ballList.size()-2; i++) {
-
+            var list = sorter.sort(ballList, cmpByColor, quickSort);
             assertTrue((ballList.get(i).getColor().compareTo(ballList.get(i+1).getColor())) <= 0 );
         }
     }
