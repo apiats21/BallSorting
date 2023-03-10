@@ -1,8 +1,8 @@
 package com.piatsevich.comparator;
 
-import com.piatsevich.model.GeneralBall;
+import com.piatsevich.model.BasketBall;
 
 public interface GeneralComparator {
 
-    int compare(GeneralBall ball1, GeneralBall ball2);
+    int compare(BasketBall ball1, BasketBall ball2);
 }

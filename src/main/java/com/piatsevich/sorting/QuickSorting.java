@@ -2,7 +2,6 @@ package com.piatsevich.sorting;
 
 import com.piatsevich.comparator.GeneralComparator;
 import com.piatsevich.model.BasketBall;
-import com.piatsevich.model.GeneralBall;
 
 import java.util.List;
 

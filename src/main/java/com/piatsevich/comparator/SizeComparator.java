@@ -1,7 +1,5 @@
 package com.piatsevich.comparator;
 
-import com.piatsevich.model.GeneralBall;
-
 public class SizeComparator implements GeneralComparator {
 
     @Override
